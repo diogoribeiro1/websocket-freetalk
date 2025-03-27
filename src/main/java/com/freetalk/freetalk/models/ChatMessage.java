@@ -1,13 +1,26 @@
 package com.freetalk.freetalk.models;
 
+import java.util.UUID;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
 public class ChatMessage {
+
+    @Id
+    @GeneratedValue
+    private UUID id;
+
     private String sender;
     private String content;
 
     public ChatMessage() {
     }
 
-    public ChatMessage(String sender, String content) {
+    public ChatMessage(UUID id, String sender, String content) {
+        this.id = id;
         this.sender = sender;
         this.content = content;
     }
@@ -26,5 +39,13 @@ public class ChatMessage {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 }
