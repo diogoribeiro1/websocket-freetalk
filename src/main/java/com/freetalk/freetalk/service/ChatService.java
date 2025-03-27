@@ -22,4 +22,11 @@ public class ChatService {
         System.out.println("Buscando mensagens do banco...");
         return chatMessageRepository.findAll();
     }
+
+    @Cacheable(value = "lastGroupMessages")
+    public List<ChatMessage> getMessagesByGroup(String groupId) {
+        System.out.println("Buscando mensagens dos grupos do banco...");
+        return chatMessageRepository.findByGroupId(groupId);
+    }
+
 }

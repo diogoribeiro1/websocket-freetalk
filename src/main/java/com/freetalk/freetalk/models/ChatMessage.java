@@ -12,9 +12,9 @@ public class ChatMessage {
     @Id
     @GeneratedValue
     private UUID id;
-
     private String sender;
     private String content;
+    private String groupId;
 
     public ChatMessage() {
     }
@@ -48,4 +48,13 @@ public class ChatMessage {
     public void setId(UUID id) {
         this.id = id;
     }
+
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
 }

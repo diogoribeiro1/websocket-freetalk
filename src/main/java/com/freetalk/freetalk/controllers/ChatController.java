@@ -4,6 +4,7 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
 
 import com.freetalk.freetalk.kafka.ChatProducer;
+import com.freetalk.freetalk.models.ChatMessage;
 
 @Controller
 public class ChatController {
@@ -15,7 +16,7 @@ public class ChatController {
     }
 
     @MessageMapping("/chat")
-    public void send(String message) {
+    public void send(ChatMessage message) {
         chatProducer.sendMessage(message);
     }
 }
