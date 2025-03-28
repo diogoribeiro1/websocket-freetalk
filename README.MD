@@ -7,6 +7,7 @@ Stacks:
 - WebSocket
 - Kafka
 - Redis
+- Docker
 - H2 Database
 
 How to run:
